@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+<!--Navbar-->
+<!--Navbar-->
+{% block content %}
+
+
+  <div class="container">
+    <br>
+    <h4>Generate Alert Message</h4>
+    <br>
+    <form action="" class="form-inline" method="post">
+      <input type="text" class="form-control" placeholder = "Enter type: (limit, market, etc.)" name="type" value="{{request.form.type}}">
+      
+      <input type="text" class="form-control" placeholder = "Enter Side (buy or sell):" name="side" value="{{request.form.side}}">
+      <input type="text" class="form-control" placeholder = "Auto or Manual:" name="auto" value="{{request.form.auto}}">
+      <input type="text" class="form-control" placeholder = "Enter Amount:" name="amount" value="{{request.form.amount}}">
+      <input type="text" class="form-control" placeholder = "Enter Price:" name="price" value="{{request.form.price}}">
+      
+      <input type="text" class="form-control" placeholder = "Enter Symbol:" name="symbol" value="{{request.form.symbol}}">
+
+      
+      <input class="btn btn-default" type="submit" value="Command">
+    </form>
+  </div>
+  {% if a %}
+  <div class="alert alert-success">
+         <h2 ><strong>Response:</strong> {{ a }}
+         </h2></div>
+  {% endif %}
+
+
+{% endblock %}
+
+

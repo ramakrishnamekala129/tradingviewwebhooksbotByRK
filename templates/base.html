@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+              
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Material Design for Bootstrap</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="/static/img/mdb-favicon.ico" type="image/x-icon">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="/static/css/mdb.min.css">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="/static/css/style.css">
+
+  <link rel="stylesheet" href="/static/css/multipicker.min.css">
+  <link rel="stylesheet" href="/static/css/bootstrap-select.css">
+
+  <script type="text/javascript">
+        var internalID = setInterval(update_values,10000);
+        function update_values(){
+        $.getJSON('/get',
+        function(data){
+            console.log(data)
+            $('#b_date').text(data.b.date);
+            $('#b_symbol').text(data.b.symbol);
+            $('#b_recommendother1').text(data.b.recommendother1);
+            $('#b_recommendall1').text(data.b.recommendall1);
+            $('#b_recommendma1').text(data.b.recommendma1);
+            $('#b_recommendother5').text(data.b.recommendother5);
+            $('#b_recommendall5').text(data.b.recommendall5);
+            $('#b_recommendma5').text(data.b.recommendma5);
+            $('#b_recommendother15').text(data.b.recommendother15);
+            $('#b_recommendall15').text(data.b.recommendall15);
+            $('#b_recommendma15').text(data.b.recommendma15);
+            $('#b_recommendother60').text(data.b.recommendother60);
+            $('#b_recommendall60').text(data.b.recommendall60);
+            $('#b_recommendma60').text(data.b.recommendma60);
+            $('#b_recommendother240').text(data.b.recommendother240);
+            $('#b_recommendall240').text(data.b.recommendall240);
+            $('#b_recommendma240').text(data.b.recommendma240);
+            $('#b_recommendother').text(data.b.recommendother);
+            $('#b_recommendall').text(data.b.recommendall);
+            $('#b_recommendma').text(data.b.recommendma);
+            $('#b_recommendother1w').text(data.b.recommendother1w);
+            $('#b_recommendall1w').text(data.b.recommendall1w);
+            $('#b_recommendma1w').text(data.b.recommendma1w);
+            $('#b_recommendother1m').text(data.b.recommendother1m);
+            $('#b_recommendall1m').text(data.b.recommendall1m);
+            $('#b_recommendma1m').text(data.b.recommendma1m);
+            $('#e_date').text(data.e.date);
+            $('#e_symbol').text(data.e.symbol);
+            $('#e_recommendother1').text(data.e.recommendother1);
+            $('#e_recommendall1').text(data.e.recommendall1);
+            $('#e_recommendma1').text(data.e.recommendma1);
+            $('#e_recommendother5').text(data.e.recommendother5);
+            $('#e_recommendall5').text(data.e.recommendall5);
+            $('#e_recommendma5').text(data.e.recommendma5);
+            $('#e_recommendother15').text(data.e.recommendother15);
+            $('#e_recommendall15').text(data.e.recommendall15);
+            $('#e_recommendma15').text(data.e.recommendma15);
+            $('#e_recommendother60').text(data.e.recommendother60);
+            $('#e_recommendall60').text(data.e.recommendall60);
+            $('#e_recommendma60').text(data.e.recommendma60);
+            $('#e_recommendother240').text(data.e.recommendother240);
+            $('#e_recommendall240').text(data.e.recommendall240);
+            $('#e_recommendma240').text(data.e.recommendma240);
+            $('#e_recommendother').text(data.e.recommendother);
+            $('#e_recommendall').text(data.e.recommendall);
+            $('#e_recommendma').text(data.e.recommendma);
+            $('#e_recommendother1w').text(data.e.recommendother1w);
+            $('#e_recommendall1w').text(data.e.recommendall1w);
+            $('#e_recommendma1w').text(data.e.recommendma1w);
+            $('#e_recommendother1m').text(data.e.recommendother1m);
+            $('#e_recommendall1m').text(data.e.recommendall1m);
+            $('#e_recommendma1m').text(data.e.recommendma1m);
+            $('#senti').text(data.s); 
+            $('#btc_currentqty').text(data.btc.currentQty);
+            $('#btc_date').text(data.btc.date);
+            $('#btc_isopen').text(data.btc.isOpen);
+            $('#btc_lastPrice').text(data.btc.lastPrice);
+            $('#btc_leverage').text(data.btc.leverage);
+            $('#btc_markprice').text(data.btc.markPrice);          
+            $('#btc_realisedPnl').text(data.btc.realisedPnl);
+            $('#btc_unrealisedPnl').text(data.btc.unrealisedPnl);
+            $('#btc_symbol').text(data.btc.symbol); 
+            $('#eth_currentqty').text(data.eth.currentQty);
+            $('#eth_date').text(data.eth.date);
+            $('#eth_isopen').text(data.eth.isOpen);
+            $('#eth_lastPrice').text(data.eth.lastPrice);
+            $('#eth_leverage').text(data.eth.leverage);
+            $('#eth_markprice').text(data.eth.markPrice);          
+            $('#eth_realisedPnl').text(data.eth.realisedPnl);
+            $('#eth_unrealisedPnl').text(data.eth.unrealisedPnl);
+            $('#eth_symbol').text(data.eth.symbol);
+            $('#l1_date').text(data.l1.date);
+            $('#l1_symbol').text(data.l1.symbol);
+            $('#l1_strategy').text(data.l1.strategy);
+            $('#l1_tradingview1').text(data.l1.tradingview1);
+            $('#l1_tradingview5').text(data.l1.tradingview5);
+            $('#l1_tradingview15').text(data.l1.tradingview15);
+            $('#l2_date').text(data.l2.date);
+            $('#l2_symbol').text(data.l2.symbol);
+            $('#l2_strategy').text(data.l2.strategy);
+            $('#l2_tradingview1').text(data.l2.tradingview1);
+            $('#l2_tradingview5').text(data.l2.tradingview5);
+            $('#l2_tradingview15').text(data.l2.tradingview15);
+            $('#l3_date').text(data.l3.date);
+            $('#l3_symbol').text(data.l3.symbol);
+            $('#l3_strategy').text(data.l3.strategy);
+            $('#l3_tradingview1').text(data.l3.tradingview1);
+            $('#l3_tradingview5').text(data.l3.tradingview5);
+            $('#l3_tradingview15').text(data.l3.tradingview15);
+            $('#l4_date').text(data.l4.date);
+            $('#l4_symbol').text(data.l4.symbol);
+            $('#l4_strategy').text(data.l4.strategy);
+            $('#l4_tradingview1').text(data.l4.tradingview1);
+            $('#l4_tradingview5').text(data.l4.tradingview5);
+            $('#l4_tradingview15').text(data.l4.tradingview15);
+            $('#l5_date').text(data.l5.date);
+            $('#l5_symbol').text(data.l5.symbol);
+            $('#l5_strategy').text(data.l5.strategy);
+            $('#l5_tradingview1').text(data.l5.tradingview1);
+            $('#l5_tradingview5').text(data.l5.tradingview5);
+            $('#l5_tradingview15').text(data.l5.tradingview15);
+            $('#l6_date').text(data.l6.date);
+            $('#l6_symbol').text(data.l6.symbol);
+            $('#l6_strategy').text(data.l6.strategy);
+            $('#l6_tradingview1').text(data.l6.tradingview1);
+            $('#l6_tradingview5').text(data.l6.tradingview5);
+            $('#l6_tradingview15').text(data.l6.tradingview15);
+            $('#l7_date').text(data.l7.date);
+            $('#l7_symbol').text(data.l7.symbol);
+            $('#l7_strategy').text(data.l7.strategy);
+            $('#l7_tradingview1').text(data.l7.tradingview1);
+            $('#l7_tradingview5').text(data.l7.tradingview5);
+            $('#l7_tradingview15').text(data.l7.tradingview15);
+            $('#l8_date').text(data.l8.date);
+            $('#l8_symbol').text(data.l8.symbol);
+            $('#l8_strategy').text(data.l8.strategy);
+            $('#l8_tradingview1').text(data.l8.tradingview1);
+            $('#l8_tradingview5').text(data.l8.tradingview5);
+            $('#l8_tradingview15').text(data.l8.tradingview15);
+            $('#l9_date').text(data.l9.date);
+            $('#l9_symbol').text(data.l9.symbol);
+            $('#l9_strategy').text(data.l9.strategy);
+            $('#l9_tradingview1').text(data.l9.tradingview1);
+            $('#l9_tradingview5').text(data.l9.tradingview5);
+            $('#l9_tradingview15').text(data.l9.tradingview15);
+            $('#l10_date').text(data.l10.date);
+            $('#l10_symbol').text(data.l10.symbol);
+            $('#l10_strategy').text(data.l10.strategy);
+            $('#l10_tradingview1').text(data.l10.tradingview1);
+            $('#l10_tradingview5').text(data.l10.tradingview5);
+            $('#l10_tradingview15').text(data.l10.tradingview15);
+            
+            
+                       
+            console.log(data.s)
+          });
+    };
+     
+        
+  </script>
+</head>
+
+<body >
+  <!--<span id="b"></span>-->
+  
+  <nav class="navbar navbar-expand-lg navbar-light primary-color">
+
+      <!-- Navbar brand -->
+      <a class="navbar-brand" href="/index">BOT</a>
+
+      <!-- Collapse button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Collapsible content -->
+      <div class="collapse navbar-collapse" id="basicExampleNav">
+
+          <!-- Links -->
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                  <a class="nav-link" href="/index">Home
+                      <span class="sr-only">(current)</span>
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/webhook">Webhooks</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/alerts">Alerts</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/plot">Chart</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/order">Orders</a>
+              </li>
+
+              <li class="nav-item">
+                  <a class="nav-link" href="/balance">Balance</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/account">Account</a>
+              </li>
+
+              <!-- Dropdown -->
+              <li class="nav-item">
+                  {{balance}}
+              </li>
+
+          </ul>
+          <!-- Links -->
+
+          <form class="form-inline">
+              <div class="md-form my-0">
+                  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+              </div>
+          </form>
+      </div>
+      <!-- Collapsible content -->
+
+    </nav>
+    <!--/.Navbar-->
+    <!-- TradingView Widget BEGIN -->
+
+
+
+  {% block content %}
+
+
+
+
+
+  {% endblock %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script type="text/javascript" src="/static/js/plotly-basic.min.js"></script>
+  <script type="text/javascript" src="/static/js/plotly-finance.min.js"></script>  
+  <script type="text/javascript" src="/static/js/d3.min.js"></script>
+  <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+
+  <script type="text/javascript" src="/static/js/multipicker.min.js"></script>
+  <script type="text/javascript" src="/static/js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="/static/js/mdb.min.js"></script>
+  <script type="text/javascript">$("#days").multiPicker({ selector : "li" });</script>
+  <script type="text/javascript"> 
+        var gra = {{graphJSON | safe}};Plotly.plot('chart',gra,{}); 
+  </script>
+{% if graph %}
+<script type='text/javascript'>var graphs0= {{ graph[0] | safe }}; Plotly.plot('chart0',graphs0, {});</script>
+<script type='text/javascript'>var graphs1= {{ graph[1] | safe }}; Plotly.plot('chart1',graphs1, {});</script>
+<script type='text/javascript'>var graphs2= {{ graph[2] | safe }}; Plotly.plot('chart2',graphs2, {});</script>
+<script type='text/javascript'>var graphs3= {{ graph[3] | safe }}; Plotly.plot('chart3',graphs3, {});</script>
+<script type='text/javascript'>var graphs4= {{ graph[4] | safe }}; Plotly.plot('chart4',graphs4, {});</script>
+<script type='text/javascript'>var graphs5= {{ graph[5] | safe }}; Plotly.plot('chart5',graphs5, {});</script>
+<script type='text/javascript'>var graphs6= {{ graph[6] | safe }}; Plotly.plot('chart6',graphs6, {});</script>
+<script type='text/javascript'>var graphs7= {{ graph[7] | safe }}; Plotly.plot('chart7',graphs7, {});</script>
+<script type='text/javascript'>var graphs8= {{ graph[8] | safe }}; Plotly.plot('chart8',graphs8, {});</script>
+<script type='text/javascript'>var graphs9= {{ graph[9] | safe }}; Plotly.plot('chart9',graphs9, {});</script>
+<script type='text/javascript'>var graphs10= {{ graph[10] | safe }}; Plotly.plot('chart10',graphs10, {});</script>
+<script type='text/javascript'>var graphs11= {{ graph[11] | safe }}; Plotly.plot('chart11',graphs11, {});</script>
+<script type='text/javascript'>var graphs12= {{ graph[12] | safe }}; Plotly.plot('chart12',graphs12, {});</script>
+<script type='text/javascript'>var graphs13= {{ graph[13] | safe }}; Plotly.plot('chart13',graphs13, {});</script>
+<script type='text/javascript'>var graphs14= {{ graph[14] | safe }}; Plotly.plot('chart14',graphs14, {});</script>
+<script type='text/javascript'>var graphs15= {{ graph[15] | safe }}; Plotly.plot('chart15',graphs15, {});</script>
+<script type='text/javascript'>var graphs16= {{ graph[16] | safe }}; Plotly.plot('chart16',graphs16, {});</script>
+<script type='text/javascript'>var graphs17= {{ graph[17] | safe }}; Plotly.plot('chart17',graphs17, {});</script>
+<script type='text/javascript'>var graphs18= {{ graph[18] | safe }}; Plotly.plot('chart18',graphs18, {});</script>
+<script type='text/javascript'>var graphs19= {{ graph[19] | safe }}; Plotly.plot('chart19',graphs19, {});</script>
+<script type='text/javascript'>var graphs20= {{ graph[20] | safe }}; Plotly.plot('chart20',graphs20, {});</script>
+<script type='text/javascript'>var graphs21= {{ graph[21] | safe }}; Plotly.plot('chart21',graphs21, {});</script>
+<script type='text/javascript'>var graphs22= {{ graph[22] | safe }}; Plotly.plot('chart22',graphs22, {});</script>
+<script type='text/javascript'>var graphs23= {{ graph[23] | safe }}; Plotly.plot('chart23',graphs23, {});</script>
+<script type='text/javascript'>var graphs24= {{ graph[24] | safe }}; Plotly.plot('chart24',graphs24, {});</script>
+<script type='text/javascript'>var graphs25= {{ graph[25] | safe }}; Plotly.plot('chart25',graphs25, {});</script>
+<script type='text/javascript'>var graphs26= {{ graph[26] | safe }}; Plotly.plot('chart26',graphs26, {});</script>
+<script type='text/javascript'>var graphs27= {{ graph[27] | safe }}; Plotly.plot('chart27',graphs27, {});</script>
+<script type='text/javascript'>var graphs28= {{ graph[28] | safe }}; Plotly.plot('chart28',graphs28, {});</script>
+<script type='text/javascript'>var graphs29= {{ graph[29] | safe }}; Plotly.plot('chart29',graphs29, {});</script>
+<script type='text/javascript'>var graphs30= {{ graph[30] | safe }}; Plotly.plot('chart30',graphs30, {});</script>
+<script type='text/javascript'>var graphs31= {{ graph[31] | safe }}; Plotly.plot('chart31',graphs31, {});</script>
+<script type='text/javascript'>var graphs32= {{ graph[32] | safe }}; Plotly.plot('chart32',graphs32, {});</script>
+<script type='text/javascript'>var graphs33= {{ graph[33] | safe }}; Plotly.plot('chart33',graphs33, {});</script>
+<script type='text/javascript'>var graphs34= {{ graph[34] | safe }}; Plotly.plot('chart34',graphs34, {});</script>
+<script type='text/javascript'>var graphs35= {{ graph[35] | safe }}; Plotly.plot('chart35',graphs35, {});</script>
+<script type='text/javascript'>var graphs36= {{ graph[36] | safe }}; Plotly.plot('chart36',graphs36, {});</script>
+<script type='text/javascript'>var graphs37= {{ graph[37] | safe }}; Plotly.plot('chart37',graphs37, {});</script>
+<script type='text/javascript'>var graphs38= {{ graph[38] | safe }}; Plotly.plot('chart38',graphs38, {});</script>
+<script type='text/javascript'>var graphs39= {{ graph[39] | safe }}; Plotly.plot('chart39',graphs39, {});</script>
+<script type='text/javascript'>var graphs40= {{ graph[40] | safe }}; Plotly.plot('chart40',graphs40, {});</script>
+<script type='text/javascript'>var graphs41= {{ graph[41] | safe }}; Plotly.plot('chart41',graphs41, {});</script>
+<script type='text/javascript'>var graphs42= {{ graph[42] | safe }}; Plotly.plot('chart42',graphs42, {});</script>
+<script type='text/javascript'>var graphs43= {{ graph[43] | safe }}; Plotly.plot('chart43',graphs43, {});</script>
+<script type='text/javascript'>var graphs44= {{ graph[44] | safe }}; Plotly.plot('chart44',graphs44, {});</script>
+<script type='text/javascript'>var graphs45= {{ graph[45] | safe }}; Plotly.plot('chart45',graphs45, {});</script>
+<script type='text/javascript'>var graphs46= {{ graph[46] | safe }}; Plotly.plot('chart46',graphs46, {});</script>
+<script type='text/javascript'>var graphs47= {{ graph[47] | safe }}; Plotly.plot('chart47',graphs47, {});</script>
+<script type='text/javascript'>var graphs48= {{ graph[48] | safe }}; Plotly.plot('chart48',graphs48, {});</script>
+<script type='text/javascript'>var graphs49= {{ graph[49] | safe }}; Plotly.plot('chart49',graphs49, {});</script>
+<script type='text/javascript'>var graphs50= {{ graph[50] | safe }}; Plotly.plot('chart50',graphs50, {});</script>
+<script type='text/javascript'>var graphs51= {{ graph[51] | safe }}; Plotly.plot('chart51',graphs51, {});</script>
+<script type='text/javascript'>var graphs52= {{ graph[52] | safe }}; Plotly.plot('chart52',graphs52, {});</script>
+<script type='text/javascript'>var graphs53= {{ graph[53] | safe }}; Plotly.plot('chart53',graphs53, {});</script>
+<script type='text/javascript'>var graphs54= {{ graph[54] | safe }}; Plotly.plot('chart54',graphs54, {});</script>
+<script type='text/javascript'>var graphs55= {{ graph[55] | safe }}; Plotly.plot('chart55',graphs55, {});</script>
+<script type='text/javascript'>var graphs56= {{ graph[56] | safe }}; Plotly.plot('chart56',graphs56, {});</script>
+<script type='text/javascript'>var graphs57= {{ graph[57] | safe }}; Plotly.plot('chart57',graphs57, {});</script>
+<script type='text/javascript'>var graphs58= {{ graph[58] | safe }}; Plotly.plot('chart58',graphs58, {});</script>
+<script type='text/javascript'>var graphs59= {{ graph[59] | safe }}; Plotly.plot('chart59',graphs59, {});</script>
+<script type='text/javascript'>var graphs60= {{ graph[60] | safe }}; Plotly.plot('chart60',graphs60, {});</script>
+<script type='text/javascript'>var graphs61= {{ graph[61] | safe }}; Plotly.plot('chart61',graphs61, {});</script>
+<script type='text/javascript'>var graphs62= {{ graph[62] | safe }}; Plotly.plot('chart62',graphs62, {});</script>
+<script type='text/javascript'>var graphs63= {{ graph[63] | safe }}; Plotly.plot('chart63',graphs63, {});</script>
+<script type='text/javascript'>var graphs64= {{ graph[64] | safe }}; Plotly.plot('chart64',graphs64, {});</script>
+<script type='text/javascript'>var graphs65= {{ graph[65] | safe }}; Plotly.plot('chart65',graphs65, {});</script>
+<script type='text/javascript'>var graphs66= {{ graph[66] | safe }}; Plotly.plot('chart66',graphs66, {});</script>
+<script type='text/javascript'>var graphs67= {{ graph[67] | safe }}; Plotly.plot('chart67',graphs67, {});</script>
+<script type='text/javascript'>var graphs68= {{ graph[68] | safe }}; Plotly.plot('chart68',graphs68, {});</script>
+<script type='text/javascript'>var graphs69= {{ graph[69] | safe }}; Plotly.plot('chart69',graphs69, {});</script>
+<script type='text/javascript'>var graphs70= {{ graph[70] | safe }}; Plotly.plot('chart70',graphs70, {});</script>
+<script type='text/javascript'>var graphs71= {{ graph[71] | safe }}; Plotly.plot('chart71',graphs71, {});</script>
+<script type='text/javascript'>var graphs72= {{ graph[72] | safe }}; Plotly.plot('chart72',graphs72, {});</script>
+<script type='text/javascript'>var graphs73= {{ graph[73] | safe }}; Plotly.plot('chart73',graphs73, {});</script>
+<script type='text/javascript'>var graphs74= {{ graph[74] | safe }}; Plotly.plot('chart74',graphs74, {});</script>
+<script type='text/javascript'>var graphs75= {{ graph[75] | safe }}; Plotly.plot('chart75',graphs75, {});</script>
+<script type='text/javascript'>var graphs76= {{ graph[76] | safe }}; Plotly.plot('chart76',graphs76, {});</script>
+<script type='text/javascript'>var graphs77= {{ graph[77] | safe }}; Plotly.plot('chart77',graphs77, {});</script>
+<script type='text/javascript'>var graphs78= {{ graph[78] | safe }}; Plotly.plot('chart78',graphs78, {});</script>
+<script type='text/javascript'>var graphs79= {{ graph[79] | safe }}; Plotly.plot('chart79',graphs79, {});</script>
+<script type='text/javascript'>var graphs80= {{ graph[80] | safe }}; Plotly.plot('chart80',graphs80, {});</script>
+<script type='text/javascript'>var graphs81= {{ graph[81] | safe }}; Plotly.plot('chart81',graphs81, {});</script>
+<script type='text/javascript'>var graphs82= {{ graph[82] | safe }}; Plotly.plot('chart82',graphs82, {});</script>
+<script type='text/javascript'>var graphs83= {{ graph[83] | safe }}; Plotly.plot('chart83',graphs83, {});</script>
+<script type='text/javascript'>var graphs84= {{ graph[84] | safe }}; Plotly.plot('chart84',graphs84, {});</script>
+<script type='text/javascript'>var graphs85= {{ graph[85] | safe }}; Plotly.plot('chart85',graphs85, {});</script>
+<script type='text/javascript'>var graphs86= {{ graph[86] | safe }}; Plotly.plot('chart86',graphs86, {});</script>
+<script type='text/javascript'>var graphs87= {{ graph[87] | safe }}; Plotly.plot('chart87',graphs87, {});</script>
+<script type='text/javascript'>var graphs88= {{ graph[88] | safe }}; Plotly.plot('chart88',graphs88, {});</script>
+<script type='text/javascript'>var graphs89= {{ graph[89] | safe }}; Plotly.plot('chart89',graphs89, {});</script>
+<script type='text/javascript'>var graphs90= {{ graph[90] | safe }}; Plotly.plot('chart90',graphs90, {});</script>
+<script type='text/javascript'>var graphs91= {{ graph[91] | safe }}; Plotly.plot('chart91',graphs91, {});</script>
+<script type='text/javascript'>var graphs92= {{ graph[92] | safe }}; Plotly.plot('chart92',graphs92, {});</script>
+<script type='text/javascript'>var graphs93= {{ graph[93] | safe }}; Plotly.plot('chart93',graphs93, {});</script>
+<script type='text/javascript'>var graphs94= {{ graph[94] | safe }}; Plotly.plot('chart94',graphs94, {});</script>
+<script type='text/javascript'>var graphs95= {{ graph[95] | safe }}; Plotly.plot('chart95',graphs95, {});</script>
+<script type='text/javascript'>var graphs96= {{ graph[96] | safe }}; Plotly.plot('chart96',graphs96, {});</script>
+<script type='text/javascript'>var graphs97= {{ graph[97] | safe }}; Plotly.plot('chart97',graphs97, {});</script>
+<script type='text/javascript'>var graphs98= {{ graph[98] | safe }}; Plotly.plot('chart98',graphs98, {});</script>
+<script type='text/javascript'>var graphs99= {{ graph[99] | safe }}; Plotly.plot('chart99',graphs99, {});</script>
+<script type='text/javascript'>var graphs100= {{ graph[100] | safe }}; Plotly.plot('chart100',graphs100, {});</script>
+<script type='text/javascript'>var graphs101= {{ graph[101] | safe }}; Plotly.plot('chart101',graphs101, {});</script>
+<script type='text/javascript'>var graphs102= {{ graph[102] | safe }}; Plotly.plot('chart102',graphs102, {});</script>
+<script type='text/javascript'>var graphs103= {{ graph[103] | safe }}; Plotly.plot('chart103',graphs103, {});</script>
+<script type='text/javascript'>var graphs104= {{ graph[104] | safe }}; Plotly.plot('chart104',graphs104, {});</script>
+<script type='text/javascript'>var graphs105= {{ graph[105] | safe }}; Plotly.plot('chart105',graphs105, {});</script>
+<script type='text/javascript'>var graphs106= {{ graph[106] | safe }}; Plotly.plot('chart106',graphs106, {});</script>
+<script type='text/javascript'>var graphs107= {{ graph[107] | safe }}; Plotly.plot('chart107',graphs107, {});</script>
+<script type='text/javascript'>var graphs108= {{ graph[108] | safe }}; Plotly.plot('chart108',graphs108, {});</script>
+<script type='text/javascript'>var graphs109= {{ graph[109] | safe }}; Plotly.plot('chart109',graphs109, {});</script>
+<script type='text/javascript'>var graphs110= {{ graph[110] | safe }}; Plotly.plot('chart110',graphs110, {});</script>
+<script type='text/javascript'>var graphs111= {{ graph[111] | safe }}; Plotly.plot('chart111',graphs111, {});</script>
+<script type='text/javascript'>var graphs112= {{ graph[112] | safe }}; Plotly.plot('chart112',graphs112, {});</script>
+<script type='text/javascript'>var graphs113= {{ graph[113] | safe }}; Plotly.plot('chart113',graphs113, {});</script>
+<script type='text/javascript'>var graphs114= {{ graph[114] | safe }}; Plotly.plot('chart114',graphs114, {});</script>
+<script type='text/javascript'>var graphs115= {{ graph[115] | safe }}; Plotly.plot('chart115',graphs115, {});</script>
+<script type='text/javascript'>var graphs116= {{ graph[116] | safe }}; Plotly.plot('chart116',graphs116, {});</script>
+<script type='text/javascript'>var graphs117= {{ graph[117] | safe }}; Plotly.plot('chart117',graphs117, {});</script>
+<script type='text/javascript'>var graphs118= {{ graph[118] | safe }}; Plotly.plot('chart118',graphs118, {});</script>
+<script type='text/javascript'>var graphs119= {{ graph[119] | safe }}; Plotly.plot('chart119',graphs119, {});</script>
+<script type='text/javascript'>var graphs120= {{ graph[120] | safe }}; Plotly.plot('chart120',graphs120, {});</script>
+<script type='text/javascript'>var graphs121= {{ graph[121] | safe }}; Plotly.plot('chart121',graphs121, {});</script>
+<script type='text/javascript'>var graphs122= {{ graph[122] | safe }}; Plotly.plot('chart122',graphs122, {});</script>
+<script type='text/javascript'>var graphs123= {{ graph[123] | safe }}; Plotly.plot('chart123',graphs123, {});</script>
+<script type='text/javascript'>var graphs124= {{ graph[124] | safe }}; Plotly.plot('chart124',graphs124, {});</script>
+<script type='text/javascript'>var graphs125= {{ graph[125] | safe }}; Plotly.plot('chart125',graphs125, {});</script>
+<script type='text/javascript'>var graphs126= {{ graph[126] | safe }}; Plotly.plot('chart126',graphs126, {});</script>
+<script type='text/javascript'>var graphs127= {{ graph[127] | safe }}; Plotly.plot('chart127',graphs127, {});</script>
+<script type='text/javascript'>var graphs128= {{ graph[128] | safe }}; Plotly.plot('chart128',graphs128, {});</script>
+<script type='text/javascript'>var graphs129= {{ graph[129] | safe }}; Plotly.plot('chart129',graphs129, {});</script>
+<script type='text/javascript'>var graphs130= {{ graph[130] | safe }}; Plotly.plot('chart130',graphs130, {});</script>
+<script type='text/javascript'>var graphs131= {{ graph[131] | safe }}; Plotly.plot('chart131',graphs131, {});</script>
+<script type='text/javascript'>var graphs132= {{ graph[132] | safe }}; Plotly.plot('chart132',graphs132, {});</script>
+<script type='text/javascript'>var graphs133= {{ graph[133] | safe }}; Plotly.plot('chart133',graphs133, {});</script>
+<script type='text/javascript'>var graphs134= {{ graph[134] | safe }}; Plotly.plot('chart134',graphs134, {});</script>
+<script type='text/javascript'>var graphs135= {{ graph[135] | safe }}; Plotly.plot('chart135',graphs135, {});</script>
+<script type='text/javascript'>var graphs136= {{ graph[136] | safe }}; Plotly.plot('chart136',graphs136, {});</script>
+<script type='text/javascript'>var graphs137= {{ graph[137] | safe }}; Plotly.plot('chart137',graphs137, {});</script>
+<script type='text/javascript'>var graphs138= {{ graph[138] | safe }}; Plotly.plot('chart138',graphs138, {});</script>
+<script type='text/javascript'>var graphs139= {{ graph[139] | safe }}; Plotly.plot('chart139',graphs139, {});</script>
+<script type='text/javascript'>var graphs140= {{ graph[140] | safe }}; Plotly.plot('chart140',graphs140, {});</script>
+<script type='text/javascript'>var graphs141= {{ graph[141] | safe }}; Plotly.plot('chart141',graphs141, {});</script>
+<script type='text/javascript'>var graphs142= {{ graph[142] | safe }}; Plotly.plot('chart142',graphs142, {});</script>
+<script type='text/javascript'>var graphs143= {{ graph[143] | safe }}; Plotly.plot('chart143',graphs143, {});</script>
+<script type='text/javascript'>var graphs144= {{ graph[144] | safe }}; Plotly.plot('chart144',graphs144, {});</script>
+<script type='text/javascript'>var graphs145= {{ graph[145] | safe }}; Plotly.plot('chart145',graphs145, {});</script>
+<script type='text/javascript'>var graphs146= {{ graph[146] | safe }}; Plotly.plot('chart146',graphs146, {});</script>
+<script type='text/javascript'>var graphs147= {{ graph[147] | safe }}; Plotly.plot('chart147',graphs147, {});</script>
+<script type='text/javascript'>var graphs148= {{ graph[148] | safe }}; Plotly.plot('chart148',graphs148, {});</script>
+<script type='text/javascript'>var graphs149= {{ graph[149] | safe }}; Plotly.plot('chart149',graphs149, {});</script>
+<script type='text/javascript'>var graphs150= {{ graph[150] | safe }}; Plotly.plot('chart150',graphs150, {});</script>
+<script type='text/javascript'>var graphs151= {{ graph[151] | safe }}; Plotly.plot('chart151',graphs151, {});</script>
+<script type='text/javascript'>var graphs152= {{ graph[152] | safe }}; Plotly.plot('chart152',graphs152, {});</script>
+<script type='text/javascript'>var graphs153= {{ graph[153] | safe }}; Plotly.plot('chart153',graphs153, {});</script>
+<script type='text/javascript'>var graphs154= {{ graph[154] | safe }}; Plotly.plot('chart154',graphs154, {});</script>
+<script type='text/javascript'>var graphs155= {{ graph[155] | safe }}; Plotly.plot('chart155',graphs155, {});</script>
+<script type='text/javascript'>var graphs156= {{ graph[156] | safe }}; Plotly.plot('chart156',graphs156, {});</script>
+<script type='text/javascript'>var graphs157= {{ graph[157] | safe }}; Plotly.plot('chart157',graphs157, {});</script>
+<script type='text/javascript'>var graphs158= {{ graph[158] | safe }}; Plotly.plot('chart158',graphs158, {});</script>
+<script type='text/javascript'>var graphs159= {{ graph[159] | safe }}; Plotly.plot('chart159',graphs159, {});</script>
+<script type='text/javascript'>var graphs160= {{ graph[160] | safe }}; Plotly.plot('chart160',graphs160, {});</script>
+<script type='text/javascript'>var graphs161= {{ graph[161] | safe }}; Plotly.plot('chart161',graphs161, {});</script>
+<script type='text/javascript'>var graphs162= {{ graph[162] | safe }}; Plotly.plot('chart162',graphs162, {});</script>
+<script type='text/javascript'>var graphs163= {{ graph[163] | safe }}; Plotly.plot('chart163',graphs163, {});</script>
+<script type='text/javascript'>var graphs164= {{ graph[164] | safe }}; Plotly.plot('chart164',graphs164, {});</script>
+<script type='text/javascript'>var graphs165= {{ graph[165] | safe }}; Plotly.plot('chart165',graphs165, {});</script>
+<script type='text/javascript'>var graphs166= {{ graph[166] | safe }}; Plotly.plot('chart166',graphs166, {});</script>
+<script type='text/javascript'>var graphs167= {{ graph[167] | safe }}; Plotly.plot('chart167',graphs167, {});</script>
+<script type='text/javascript'>var graphs168= {{ graph[168] | safe }}; Plotly.plot('chart168',graphs168, {});</script>
+<script type='text/javascript'>var graphs169= {{ graph[169] | safe }}; Plotly.plot('chart169',graphs169, {});</script>
+<script type='text/javascript'>var graphs170= {{ graph[170] | safe }}; Plotly.plot('chart170',graphs170, {});</script>
+<script type='text/javascript'>var graphs171= {{ graph[171] | safe }}; Plotly.plot('chart171',graphs171, {});</script>
+<script type='text/javascript'>var graphs172= {{ graph[172] | safe }}; Plotly.plot('chart172',graphs172, {});</script>
+<script type='text/javascript'>var graphs173= {{ graph[173] | safe }}; Plotly.plot('chart173',graphs173, {});</script>
+<script type='text/javascript'>var graphs174= {{ graph[174] | safe }}; Plotly.plot('chart174',graphs174, {});</script>
+<script type='text/javascript'>var graphs175= {{ graph[175] | safe }}; Plotly.plot('chart175',graphs175, {});</script>
+<script type='text/javascript'>var graphs176= {{ graph[176] | safe }}; Plotly.plot('chart176',graphs176, {});</script>
+<script type='text/javascript'>var graphs177= {{ graph[177] | safe }}; Plotly.plot('chart177',graphs177, {});</script>
+<script type='text/javascript'>var graphs178= {{ graph[178] | safe }}; Plotly.plot('chart178',graphs178, {});</script>
+<script type='text/javascript'>var graphs179= {{ graph[179] | safe }}; Plotly.plot('chart179',graphs179, {});</script>
+<script type='text/javascript'>var graphs180= {{ graph[180] | safe }}; Plotly.plot('chart180',graphs180, {});</script>
+<script type='text/javascript'>var graphs181= {{ graph[181] | safe }}; Plotly.plot('chart181',graphs181, {});</script>
+<script type='text/javascript'>var graphs182= {{ graph[182] | safe }}; Plotly.plot('chart182',graphs182, {});</script>
+<script type='text/javascript'>var graphs183= {{ graph[183] | safe }}; Plotly.plot('chart183',graphs183, {});</script>
+<script type='text/javascript'>var graphs184= {{ graph[184] | safe }}; Plotly.plot('chart184',graphs184, {});</script>
+<script type='text/javascript'>var graphs185= {{ graph[185] | safe }}; Plotly.plot('chart185',graphs185, {});</script>
+<script type='text/javascript'>var graphs186= {{ graph[186] | safe }}; Plotly.plot('chart186',graphs186, {});</script>
+<script type='text/javascript'>var graphs187= {{ graph[187] | safe }}; Plotly.plot('chart187',graphs187, {});</script>
+<script type='text/javascript'>var graphs188= {{ graph[188] | safe }}; Plotly.plot('chart188',graphs188, {});</script>
+<script type='text/javascript'>var graphs189= {{ graph[189] | safe }}; Plotly.plot('chart189',graphs189, {});</script>
+<script type='text/javascript'>var graphs190= {{ graph[190] | safe }}; Plotly.plot('chart190',graphs190, {});</script>
+<script type='text/javascript'>var graphs191= {{ graph[191] | safe }}; Plotly.plot('chart191',graphs191, {});</script>
+<script type='text/javascript'>var graphs192= {{ graph[192] | safe }}; Plotly.plot('chart192',graphs192, {});</script>
+<script type='text/javascript'>var graphs193= {{ graph[193] | safe }}; Plotly.plot('chart193',graphs193, {});</script>
+<script type='text/javascript'>var graphs194= {{ graph[194] | safe }}; Plotly.plot('chart194',graphs194, {});</script>
+<script type='text/javascript'>var graphs195= {{ graph[195] | safe }}; Plotly.plot('chart195',graphs195, {});</script>
+<script type='text/javascript'>var graphs196= {{ graph[196] | safe }}; Plotly.plot('chart196',graphs196, {});</script>
+<script type='text/javascript'>var graphs197= {{ graph[197] | safe }}; Plotly.plot('chart197',graphs197, {});</script>
+<script type='text/javascript'>var graphs198= {{ graph[198] | safe }}; Plotly.plot('chart198',graphs198, {});</script>
+<script type='text/javascript'>var graphs199= {{ graph[199] | safe }}; Plotly.plot('chart199',graphs199, {});</script>
+<script type='text/javascript'>var graphs200= {{ graph[200] | safe }}; Plotly.plot('chart200',graphs200, {});</script>
+<script type='text/javascript'>var graphs201= {{ graph[201] | safe }}; Plotly.plot('chart201',graphs201, {});</script>
+<script type='text/javascript'>var graphs202= {{ graph[202] | safe }}; Plotly.plot('chart202',graphs202, {});</script>
+<script type='text/javascript'>var graphs203= {{ graph[203] | safe }}; Plotly.plot('chart203',graphs203, {});</script>
+<script type='text/javascript'>var graphs204= {{ graph[204] | safe }}; Plotly.plot('chart204',graphs204, {});</script>
+<script type='text/javascript'>var graphs205= {{ graph[205] | safe }}; Plotly.plot('chart205',graphs205, {});</script>
+<script type='text/javascript'>var graphs206= {{ graph[206] | safe }}; Plotly.plot('chart206',graphs206, {});</script>
+<script type='text/javascript'>var graphs207= {{ graph[207] | safe }}; Plotly.plot('chart207',graphs207, {});</script>
+<script type='text/javascript'>var graphs208= {{ graph[208] | safe }}; Plotly.plot('chart208',graphs208, {});</script>
+<script type='text/javascript'>var graphs209= {{ graph[209] | safe }}; Plotly.plot('chart209',graphs209, {});</script>
+<script type='text/javascript'>var graphs210= {{ graph[210] | safe }}; Plotly.plot('chart210',graphs210, {});</script>
+<script type='text/javascript'>var graphs211= {{ graph[211] | safe }}; Plotly.plot('chart211',graphs211, {});</script>
+<script type='text/javascript'>var graphs212= {{ graph[212] | safe }}; Plotly.plot('chart212',graphs212, {});</script>
+<script type='text/javascript'>var graphs213= {{ graph[213] | safe }}; Plotly.plot('chart213',graphs213, {});</script>
+<script type='text/javascript'>var graphs214= {{ graph[214] | safe }}; Plotly.plot('chart214',graphs214, {});</script>
+<script type='text/javascript'>var graphs215= {{ graph[215] | safe }}; Plotly.plot('chart215',graphs215, {});</script>
+<script type='text/javascript'>var graphs216= {{ graph[216] | safe }}; Plotly.plot('chart216',graphs216, {});</script>
+<script type='text/javascript'>var graphs217= {{ graph[217] | safe }}; Plotly.plot('chart217',graphs217, {});</script>
+<script type='text/javascript'>var graphs218= {{ graph[218] | safe }}; Plotly.plot('chart218',graphs218, {});</script>
+<script type='text/javascript'>var graphs219= {{ graph[219] | safe }}; Plotly.plot('chart219',graphs219, {});</script>
+<script type='text/javascript'>var graphs220= {{ graph[220] | safe }}; Plotly.plot('chart220',graphs220, {});</script>
+<script type='text/javascript'>var graphs221= {{ graph[221] | safe }}; Plotly.plot('chart221',graphs221, {});</script>
+<script type='text/javascript'>var graphs222= {{ graph[222] | safe }}; Plotly.plot('chart222',graphs222, {});</script>
+<script type='text/javascript'>var graphs223= {{ graph[223] | safe }}; Plotly.plot('chart223',graphs223, {});</script>
+<script type='text/javascript'>var graphs224= {{ graph[224] | safe }}; Plotly.plot('chart224',graphs224, {});</script>
+<script type='text/javascript'>var graphs225= {{ graph[225] | safe }}; Plotly.plot('chart225',graphs225, {});</script>
+<script type='text/javascript'>var graphs226= {{ graph[226] | safe }}; Plotly.plot('chart226',graphs226, {});</script>
+<script type='text/javascript'>var graphs227= {{ graph[227] | safe }}; Plotly.plot('chart227',graphs227, {});</script>
+<script type='text/javascript'>var graphs228= {{ graph[228] | safe }}; Plotly.plot('chart228',graphs228, {});</script>
+<script type='text/javascript'>var graphs229= {{ graph[229] | safe }}; Plotly.plot('chart229',graphs229, {});</script>
+<script type='text/javascript'>var graphs230= {{ graph[230] | safe }}; Plotly.plot('chart230',graphs230, {});</script>
+<script type='text/javascript'>var graphs231= {{ graph[231] | safe }}; Plotly.plot('chart231',graphs231, {});</script>
+<script type='text/javascript'>var graphs232= {{ graph[232] | safe }}; Plotly.plot('chart232',graphs232, {});</script>
+<script type='text/javascript'>var graphs233= {{ graph[233] | safe }}; Plotly.plot('chart233',graphs233, {});</script>
+<script type='text/javascript'>var graphs234= {{ graph[234] | safe }}; Plotly.plot('chart234',graphs234, {});</script>
+<script type='text/javascript'>var graphs235= {{ graph[235] | safe }}; Plotly.plot('chart235',graphs235, {});</script>
+<script type='text/javascript'>var graphs236= {{ graph[236] | safe }}; Plotly.plot('chart236',graphs236, {});</script>
+<script type='text/javascript'>var graphs237= {{ graph[237] | safe }}; Plotly.plot('chart237',graphs237, {});</script>
+<script type='text/javascript'>var graphs238= {{ graph[238] | safe }}; Plotly.plot('chart238',graphs238, {});</script>
+<script type='text/javascript'>var graphs239= {{ graph[239] | safe }}; Plotly.plot('chart239',graphs239, {});</script>
+<script type='text/javascript'>var graphs240= {{ graph[240] | safe }}; Plotly.plot('chart240',graphs240, {});</script>
+<script type='text/javascript'>var graphs241= {{ graph[241] | safe }}; Plotly.plot('chart241',graphs241, {});</script>
+<script type='text/javascript'>var graphs242= {{ graph[242] | safe }}; Plotly.plot('chart242',graphs242, {});</script>
+<script type='text/javascript'>var graphs243= {{ graph[243] | safe }}; Plotly.plot('chart243',graphs243, {});</script>
+<script type='text/javascript'>var graphs244= {{ graph[244] | safe }}; Plotly.plot('chart244',graphs244, {});</script>
+<script type='text/javascript'>var graphs245= {{ graph[245] | safe }}; Plotly.plot('chart245',graphs245, {});</script>
+<script type='text/javascript'>var graphs246= {{ graph[246] | safe }}; Plotly.plot('chart246',graphs246, {});</script>
+<script type='text/javascript'>var graphs247= {{ graph[247] | safe }}; Plotly.plot('chart247',graphs247, {});</script>
+<script type='text/javascript'>var graphs248= {{ graph[248] | safe }}; Plotly.plot('chart248',graphs248, {});</script>
+<script type='text/javascript'>var graphs249= {{ graph[249] | safe }}; Plotly.plot('chart249',graphs249, {});</script>
+  {% endif %}
+  <script type="text/javascript" src="/static/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="/static/js/bootstrap-select.min.js"></script>
+  
+
+  <script type="text/javascript">$('fruit').selectpicker();</script>  
+  <script type="text/javascript">$('technical').selectpicker();</script>  
+  <script type="text/javascript">$('coins').selectpicker();</script>  
+</body>
+</html>

@@ -1,0 +1,232 @@
+{% extends "base.html" %}
+
+<!--Navbar-->
+<!--Navbar-->
+{% block content %}
+	<table class="table">
+	  <thead>
+	    <tr class="table-dark">
+	      <th scope="col">#</th>
+	      <th scope="col">Dates</th>
+	      <th scope="col">Symbol</th>
+	      <th scope="col">Side</th>
+	      <th scope="col">Type</th>
+	      <th scope="col">Amount</th>
+	      <th scope="col">Price</th>
+
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr class="table-success">
+	      <th scope="row">1</th>
+	      <td>{{ p1['date'] }}</td>
+	      <td>{{ p1['symbol'] }}</td>
+	      <td>{{ p1['side'] }}</td>
+	      <td>{{ p1['type'] }}</td>
+	      <td>{{ p1['amount'] }}</td>
+	      <td>{{ p1['price'] }}</td>
+	    </tr>
+	    <tr class="table-success">
+	      <th scope="row">2</th>
+	      <td>{{ p2['date'] }}</td>
+	      <td>{{ p2['symbol'] }}</td>
+	      <td>{{ p2['side'] }}</td>
+	      <td>{{ p2['type'] }}</td>
+	      <td>{{ p2['amount'] }}</td>
+	      <td>{{ p2['price'] }}</td>
+	    </tr>
+	    <tr class="table-success">
+	      <th scope="row">3</th>
+	      <td>{{ p3['date'] }}</td>
+	      <td>{{ p3['symbol'] }}</td>
+	      <td>{{ p3['side'] }}</td>
+	      <td>{{ p3['type'] }}</td>
+	      <td>{{ p3['amount'] }}</td>
+	      <td>{{ p3['price'] }}</td>
+	    </tr>
+	    <tr class="table-success">
+	      <th scope="row">4</th>
+	      <td>{{ p4['date'] }}</td>
+	      <td>{{ p4['symbol'] }}</td>
+	      <td>{{ p4['side'] }}</td>
+	      <td>{{ p4['type'] }}</td>
+	      <td>{{ p4['amount'] }}</td>
+	      <td>{{ p4['price'] }}</td>
+	    </tr>
+	    <tr class="table-success">
+	      <th scope="row">5</th>
+	      <td>{{ p5['date'] }}</td>
+	      <td>{{ p5['symbol'] }}</td>
+	      <td>{{ p5['side'] }}</td>
+	      <td>{{ p5['type'] }}</td>
+	      <td>{{ p5['amount'] }}</td>
+	      <td>{{ p5['price'] }}</td>
+	    </tr>
+
+
+	  </tbody>
+	</table>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Date</th>
+      <th scope="col">Symbol</th>
+      <th scope="col">Current Qty</th>
+      <th scope="col">in Market</th>
+      <th scope="col">Price</th>
+      <th scope="col">RealisedPnl</th>
+      <th scope="col">UnrealisedPnl</th>
+      <th scope="col">Last Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td id='btc_date'>{{btc['date']}}</td>
+      <td id='btc_symbol'>{{btc['symbol']}}</td>
+      <td id='btc_currentqty'>{{btc['currentQty']}}</td>
+      <td id='btc_isopen'>{{btc['isOpen']}}</td>
+      <td id='btc_markPrice'>{{btc['markPrice']}}</td>
+      <td id='btc_realisedPnl' >{{btc['realisedPnl']}}</td>
+      <td id='btc_unrealisedPnl' >{{btc['unrealisedPnl']}}</td>
+      <td id='btc_lastPrice' >{{btc['lastPrice']}}</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td id='eth_date'>{{eth['date']}}</td>
+      <td id='eth_symbol'>{{eth['symbol']}}</td>
+      <td id='eth_currentqty'>{{eth['currentQty']}}</td>
+      <td id='eth_isopen'>{{eth['isOpen']}}</td>
+      <td id='eth_markPrice'>{{eth['markPrice']}}</td>
+      <td id='eth_realisedPnl' >{{eth['realisedPnl']}}</td>
+      <td id='eth_unrealisedPnl' >{{eth['unrealisedPnl']}}</td>
+      <td id='eth_lastPrice' >{{eth['lastPrice']}}</td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Date</th>
+      <th scope="col">Symbol</th>
+      <th scope="col">TV Strategy</th>
+      <th scope="col">Signal1</th>
+      <th scope="col">Signal2</th>
+      <th scope="col">Signal3</th>
+      
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td id='l1_date'>{{l1['date']}}</td>
+      <td id='l1_symbol'>{{l1['symbol']}}</td>
+      <td id='l1_strategy'>{{l1['strategy']}}</td>
+      <td id='l1_tradingview1'>{{l1['tradingview1']}}</td>
+      <td id='l1_tradingview5'>{{l1['tradingview5']}}</td>
+      <td id='l1_tradingview15'>{{l1['tradingview15']}}</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td id='l2_date'>{{l2['date']}}</td>
+      <td id='l2_symbol'>{{l2['symbol']}}</td>
+      <td id='l2_strategy'>{{l2['strategy']}}</td>
+      <td id='l2_tradingview1'>{{l2['tradingview1']}}</td>
+      <td id='l2_tradingview5'>{{l2['tradingview5']}}</td>
+      <td id='l2_tradingview15'>{{l2['tradingview15']}}</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td id='l3_date'>{{l3['date']}}</td>
+      <td id='l3_symbol'>{{l3['symbol']}}</td>
+      <td id='l3_strategy'>{{l3['strategy']}}</td>
+      <td id='l3_tradingview1'>{{l3['tradingview1']}}</td>
+      <td id='l3_tradingview5'>{{l3['tradingview5']}}</td>
+      <td id='l3_tradingview15'>{{l3['tradingview15']}}</td>
+    </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td id='l4_date'>{{l4['date']}}</td>
+      <td id='l4_symbol'>{{l4['symbol']}}</td>
+      <td id='l4_strategy'>{{l4['strategy']}}</td>
+      <td id='l4_tradingview1'>{{l4['tradingview1']}}</td>
+      <td id='l4_tradingview5'>{{l4['tradingview5']}}</td>
+      <td id='l4_tradingview15'>{{l4['tradingview15']}}</td>
+    </tr>
+    <tr>
+      <th scope="row">5</th>
+      <td id='l5_date'>{{l5['date']}}</td>
+      <td id='l5_symbol'>{{l5['symbol']}}</td>
+      <td id='l5_strategy'>{{l5['strategy']}}</td>
+      <td id='l5_tradingview1'>{{l5['tradingview1']}}</td>
+      <td id='l5_tradingview5'>{{l5['tradingview5']}}</td>
+      <td id='l5_tradingview15'>{{l5['tradingview15']}}</td>
+    </tr>
+    <tr>
+      <th scope="row">6</th>
+      <td id='l6_date'>{{l6['date']}}</td>
+      <td id='l6_symbol'>{{l6['symbol']}}</td>
+      <td id='l6_strategy'>{{l6['strategy']}}</td>
+      <td id='l6_tradingview1'>{{l6['tradingview1']}}</td>
+      <td id='l6_tradingview5'>{{l6['tradingview5']}}</td>
+      <td id='l6_tradingview15'>{{l6['tradingview15']}}</td>
+    </tr>
+    <tr>
+      <th scope="row">7</th>
+      <td id='l7_date'>{{l7['date']}}</td>
+      <td id='l7_symbol'>{{l7['symbol']}}</td>
+      <td id='l7_strategy'>{{l7['strategy']}}</td>
+      <td id='l7_tradingview1'>{{l7['tradingview1']}}</td>
+      <td id='l7_tradingview5'>{{l7['tradingview5']}}</td>
+      <td id='l7_tradingview15'>{{l7['tradingview15']}}</td>
+    </tr>
+    <tr>
+      <th scope="row">8</th>
+      <td id='l8_date'>{{l8['date']}}</td>
+      <td id='l8_symbol'>{{l8['symbol']}}</td>
+      <td id='l8_strategy'>{{l8['strategy']}}</td>
+      <td id='l8_tradingview1'>{{l8['tradingview1']}}</td>
+      <td id='l8_tradingview5'>{{l8['tradingview5']}}</td>
+      <td id='l8_tradingview15'>{{l8['tradingview15']}}</td>
+    </tr>
+    <tr>
+      <th scope="row">9</th>
+      <td id='l9_date'>{{l9['date']}}</td>
+      <td id='l9_symbol'>{{l9['symbol']}}</td>
+      <td id='l9_strategy'>{{l9['strategy']}}</td>
+      <td id='l9_tradingview1'>{{l9['tradingview1']}}</td>
+      <td id='l9_tradingview5'>{{l9['tradingview5']}}</td>
+      <td id='l9_tradingview15'>{{l9['tradingview15']}}</td>
+    </tr>
+    <tr>
+      <th scope="row">10</th>
+      <td id='l10_date'>{{l10['date']}}</td>
+      <td id='l10_symbol'>{{l10['symbol']}}</td>
+      <td id='l10_strategy'>{{l10['strategy']}}</td>
+      <td id='l10_tradingview1'>{{l10['tradingview1']}}</td>
+      <td id='l10_tradingview5'>{{l10['tradingview5']}}</td>
+      <td id='l10_tradingview15'>{{l10['tradingview15']}}</td>
+    </tr>
+
+
+    
+  </tbody>
+</table>
+
+
+
+
+
+
+      
+
+
+{% endblock %}

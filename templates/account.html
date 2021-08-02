@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+
+
+
+
+
+{% block content %}
+
+
+  <div class="container">
+    <br>
+    <h4>Exchange Api</h4>
+    <br>
+    <h5>Bitmex</h5>
+    <br>
+    <form action="" class="form-inline" method="post">      
+
+      <input type="text" class="form-control" placeholder = "Name" name="name" value="{{request.form.name}}">
+      <input type="text" class="form-control" placeholder = "Api Key" name="apikey" value="{{request.form.apikey}}">
+      <input type="text" class="form-control" placeholder = "Api Secret " name="apisecret" value="{{request.form.apisecret}}">      
+      <input class="btn btn-default" type="submit" value="Set">
+    </form>
+  </div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

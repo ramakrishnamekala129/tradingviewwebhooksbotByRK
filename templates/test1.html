@@ -1,0 +1,47 @@
+  
+<!doctype html>
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+<!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+
+    <script type="text/javascript">
+        Plotly.d3.csv("https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv",function(e,t){function o(e,t){return e.map(function(e){return e[t]})}var a=[{x:o(t,"Date"),close:o(t,"AAPL.Close"),high:o(t,"AAPL.High"),low:o(t,"AAPL.Low"),open:o(t,"AAPL.Open"),increasing:{line:{color:"black"}},decreasing:{line:{color:"red"}},type:"candlestick",xaxis:"x",yaxis:"y"}];Plotly.newPlot("myDiv",a,{dragmode:"zoom",showlegend:!1,xaxis:{autorange:!0,title:"Date",rangeselector:{x:0,y:1.2,xanchor:"left",font:{size:8},buttons:[{step:"month",stepmode:"backward",count:1,label:"1 month"},{step:"month",stepmode:"backward",count:6,label:"6 months"},{step:"all",label:"All dates"}]}},yaxis:{autorange:!0}})});
+    </script>
+    <script type="text/javascript">
+
+    var graphs = {{graphJSON | safe}};
+    var ids = {{ids | safe}};
+
+    for(var i in graphs) {
+        Plotly.plot(ids[i], // the ID of the div, created above
+                    graphs[i].data,
+                    graphs[i].layout || {});
+    }
+
+</script>
+</head>
+    <!-- D3.js -->
+
+<body>
+
+    <div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
+
+    {% for id in ids %}
+        <h3>{{id}}</h3>
+        <div id="{{id}}"></div>
+    {% endfor %}
+
+</body>
+
+
+<footer>
+
+</footer>
+
+</html>

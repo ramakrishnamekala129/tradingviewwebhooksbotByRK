@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col"><h3><strong>Type</strong></h3></th>
+      <th scope="col"><h3><strong>in BTC</strong></h3></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">PrevRealisedPnl</th>
+      <td>{{ info[0]['prevRealisedPnl'] }}</td>
+    </tr>
+    <tr>
+      <th scope="row">RealisedPnl</th>
+      <td>{{ info[0]['realisedPnl'] }}</td>
+    </tr>
+    <tr>
+      <th scope="row">UnrealisedPnl</th>
+      <td>{{ info[0]['unrealisedPnl'] }}</td>
+    </tr>
+        <tr>
+      <th scope="row">MarginBalance</th>
+      <td>{{ info[0]['marginBalance'] }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Free</th>
+      <td>{{ info[1]['free'] }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Used</th>
+      <td>{{ info[1]['used'] }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Total</th>
+      <td>{{ info[1]['total'] }}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+{% endblock %} 

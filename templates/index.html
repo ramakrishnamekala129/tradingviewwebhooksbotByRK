@@ -1,0 +1,298 @@
+{% extends "base.html" %}
+
+<!--Navbar-->
+<!--Navbar-->
+{% block content %}
+
+    <!-- TradingView Widget BEGIN -->
+    <div class="tradingview-widget-container">
+      <div id="tradingview_b9975"></div>
+      <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/BITMEX-XBTUSD/" rel="noopener" target="_blank"><span class="blue-text">XBTUSD Chart</span></a> by TradingView</div>
+      <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+      <script type="text/javascript">
+      new TradingView.widget(
+      {
+      "width": 1200,
+      "height": 700,
+      "symbol": "BITMEX:XBTUSD",
+      "interval": "120",
+      "timezone": "Etc/UTC",
+      "theme": "light",
+      "style": "8",
+      "locale": "en",
+      "toolbar_bg": "#f1f3f6",
+      "enable_publishing": false,
+      "allow_symbol_change": true,
+      "container_id": "tradingview_b9975"
+        }
+      );
+      </script>
+    </div>
+    <!-- TradingView Widget END -->
+    <div class='container'>
+
+      <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+            <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/BINANCE-BTCUSDT/technicals/" rel="noopener" target="_blank"><span class="blue-text">Technical Analysis for BTCUSDT</span></a> by TradingView</div>
+              <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
+                {
+                  "interval": "1m",
+                  "width": "800",
+                  "isTransparent": false,
+                  "height": "500",
+                  "symbol": "BINANCE:BTCUSDT",
+                  "showIntervalTabs": true,
+                  "locale": "en",
+                  "colorTheme": "light"
+                  }
+                  </script>
+              </div>
+          <!-- TradingView Widget END -->
+
+      </div>
+<div class="card text-white bg-dark" style="max-width: max;position: centre;">
+  <div class="card-header" style="text-align: center;">Sentiment Analysis</div>
+  <div class="card-body">
+    <h5 class="card-title" id='senti' style="text-align: center;">h</h5>
+  </div>
+</div>
+{% if currentstrategy %}
+  <h1>Current strategy</h1>
+    <table class="table" http-equiv="refresh" content="30" >
+
+    <thead>
+      <tr class="table-dark">
+        <th scope=col>#</th>
+        <th scope=col>Date</th>
+        <th scope=col>Signal1</th>
+        <th scope=col>Signal2</th>
+        <th scope=col>Signal3</th>
+        <th scope=col>Signal4</th>
+        <th scope=col>Strategy</th>
+        <th scope=col>Qty</th>
+        <th scope=col>Mode</th>
+        <th scope=col>Order Type</th>
+        <th scope=col>Risk Management</th>       
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-success">
+        <th scope="row">1</th>
+        <td >{{ currentstrategy['date']}}</td>
+        <td >{{ currentstrategy['signal1'] }}</td>
+        <td >{{ currentstrategy['signal2'] }}</td>
+        <td >{{ currentstrategy['signal3'] }}</td>
+        <td >{{ currentstrategy['signal4'] }}</td>
+        <td >{{ currentstrategy['strategy'] }}</td>
+        <td >{{ currentstrategy['Qty'] }}</td>
+        <td >{{ currentstrategy['mode'] }}</td>
+        <td >{{ currentstrategy['ordertype'] }}</td>
+        <td >{{ currentstrategy['riskmanagement'] }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+{% endif %}
+<div class="jumbotron">
+  <h1>Strategy</h1>
+  
+</div>
+<div class="container p-3 my-3 bg-dark text-white">
+    <form action="" class="form-inline" method="post">
+
+      <select name=signal1 class="custom-select">
+        {% for option in options %}
+        <option value= "{{option}}">{{option}}</option>"
+        {% endfor %}
+     </select>
+    <select name=signal2 class="custom-select">
+        {% for option in options %}
+        <option value= "{{option}}">{{option}}</option>"
+        {% endfor %}
+    </select>
+    <select name=signal3 class="custom-select">
+        {% for option in options %}
+        <option value= "{{option}}">{{option}}</option>"
+        {% endfor %}
+    </select>
+    <select name=signal4 class="custom-select">
+        {% for option in options3 %}
+        <option value= "{{option}}">{{option}}</option>"
+        {% endfor %}
+    </select>
+    <select name=strategy class="custom-select">
+        {% for option in options1 %}
+        <option value= "{{option}}">{{option}}</option>"
+        {% endfor %}
+    </select>
+    <select name=Strategy class="custom-select">
+        {% for option in options4 %}
+        <option value= "{{option}}">{{option}}</option>"
+        {% endfor %}
+    </select>
+
+    <input class="custom-select" type="number" id="quantity" name="quantity" min="1" max="1000" value=100>
+
+    <select name=mode class="custom-select">
+        {% for option in options2 %}
+        <option value= "{{option}}">{{option}}</option>"
+        {% endfor %}
+    </select>
+    <select name=ordertype class="custom-select">
+        {% for option in ordertype %}
+        <option value= "{{option}}">{{option}}</option>"
+        {% endfor %}
+    </select>
+    <select name=riskmanagement class="custom-select">
+        {% for option in riskmanagement %}
+        <option value= "{{option}}">{{option}}</option>"
+        {% endfor %}
+    </select>
+    <input class="custom-select" type="number" id="quantity" name="riskquantity" min="1" max="1000" value=1>
+    <select name=riskmode class="custom-select">
+        {% for option in riskmode %}
+        <option value= "{{option}}">{{option}}</option>"
+        {% endfor %}
+    </select>
+      <input class="btn btn-default" type="submit" value="Set Strategy">
+    </form>
+</div>
+
+
+<div class="ajax">
+  <table class="table" http-equiv="refresh" content="30" >
+
+    <thead>
+      <tr class="table-dark">
+        <th scope=col>#</th>
+        <th scope=col>Symbol</th>
+        <th scope=col>All|1</th>
+        <th scope=col>All|5</th>
+        <th scope=col>All|15</th>
+        <th scope=col>All|60</th>
+        <th scope=col>All|240</th>
+        <th scope=col>All</th>
+        <th scope=col>All|1W</th>
+        <th scope=col>All|1M</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-success">
+        <th scope="row">1</th>
+        <td id="b_symbol">{{ b['symbol'] }}</td>
+        <td id="b_recommendall1">{{ b['recommendall1'] }}</td>
+        <td id="b_recommendall5">{{ b['recommendall5'] }}</td>
+        <td id="b_recommendall15">{{ b['recommendall15'] }}</td>
+        <td id="b_recommendall60">{{ b['recommendall60'] }}</td>
+        <td id="b_recommendall240">{{ b['recommendall240'] }}</td>
+        <td id="b_recommendall">{{ b['recommendall'] }}</td>
+        <td id="b_recommendall1w">{{ b['recommendall1w'] }}</td>
+        <td id="b_recommendall1m">{{ b['recommendall1m'] }}</td>
+      </tr>
+      <tr class="table-success">
+        <th scope="row">2</th>
+        <td id="e_symbol">{{ e['symbol'] }}</td>
+        <td id="e_recommendall1">{{ e['recommendall1'] }}</td>
+        <td id="e_recommendall5">{{ e['recommendall5'] }}</td>
+        <td id="e_recommendall15">{{ e['recommendall15'] }}</td>
+        <td id="e_recommendall60">{{ e['recommendall60'] }}</td>
+        <td id="e_recommendall240">{{ e['recommendall240'] }}</td>
+        <td id="e_recommendall">{{ e['recommendall'] }}</td>
+        <td id="e_recommendall1w">{{ e['recommendall1w'] }}</td>
+        <td id="e_recommendall1m">{{ e['recommendall1m'] }}</td>
+      </tr>
+
+    </tbody>
+  </table>
+  <table class="table">
+    <thead>
+      <tr class="table-dark">
+        <th scope=col>#</th>
+        <th scope=col>Symbol</th>
+        <th scope=col>Other|1</th>
+        <th scope=col>Other|5</th>
+        <th scope=col>Other|15</th>
+        <th scope=col>Other|60</th>
+        <th scope=col>Other|240</th>
+        <th scope=col>Other</th>
+        <th scope=col>Other|1W</th>
+        <th scope=col>Other|1M</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-success">
+        <th scope="row">1</th>
+        <td id="b_symbol">{{ b['symbol'] }}</td>
+        <td id="b_recommendother1">{{ b['recommendother1'] }}</td>
+        <td id="b_recommendother5">{{ b['recommendother5'] }}</td>
+        <td id="b_recommendother15">{{ b['recommendother15'] }}</td>
+        <td id="b_recommendother60">{{ b['recommendother60'] }}</td>
+        <td id="b_recommendother240">{{ b['recommendother240'] }}</td>
+        <td id="b_recommendother">{{ b['recommendother'] }}</td>
+        <td id="b_recommendother1w">{{ b['recommendother1w'] }}</td>
+        <td id="b_recommendother1m">{{ b['recommendother1m'] }}</td>
+      </tr>
+      <tr class="table-success">
+        <th scope="row">2</th>
+        <td id="e_symbol">{{ e['symbol'] }}</td>
+        <td id="e_recommendother1">{{ e['recommendother1'] }}</td>
+        <td id="e_recommendother5">{{ e['recommendother5'] }}</td>
+        <td id="e_recommendother15">{{ e['recommendother15'] }}</td>
+        <td id="e_recommendother60">{{ e['recommendother60'] }}</td>
+        <td id="e_recommendother240">{{ e['recommendother240'] }}</td>
+        <td id="e_recommendother">{{ e['recommendother'] }}</td>
+        <td id="e_recommendother1w">{{ e['recommendother1w'] }}</td>
+        <td id="e_recommendother1m">{{ e['recommendother1m'] }}</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+    <table class="table">
+    <thead>
+      <tr class="table-dark">
+        <th scope=col>#</th>
+        <th scope=col>Symbol</th>
+        <th scope=col>MA|1</th>
+        <th scope=col>MA|5</th>
+        <th scope=col>MA|15</th>
+        <th scope=col>MA|60</th>
+        <th scope=col>MA|240</th>
+        <th scope=col>MA</th>
+        <th scope=col>MA|1W</th>
+        <th scope=col>MA|1M</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-success">
+        <th scope="row">1</th>
+        <td id="b_symbol">{{ b['symbol'] }}</td>
+        <td id="b_recommendma1">{{ b['recommendma1'] }}</td>
+        <td id="b_recommendma5">{{ b['recommendma5'] }}</td>
+        <td id="b_recommendma15">{{ b['recommendma15'] }}</td>
+        <td id="b_recommendma60">{{ b['recommendma60'] }}</td>
+        <td id="b_recommendma240">{{ b['recommendma240'] }}</td>
+        <td id="b_recommendma">{{ b['recommendma'] }}</td>
+        <td id="b_recommendma1w">{{ b['recommendma1w'] }}</td>
+        <td id="b_recommendma1m">{{ b['recommendma1m'] }}</td>
+      </tr>
+      <tr class="table-success">
+        <th scope="row">2</th>
+        <td id="e_symbol">{{ e['symbol'] }}</td>
+        <td id="e_recommendma1">{{ e['recommendma1'] }}</td>
+        <td id="e_recommendma5">{{ e['recommendma5'] }}</td>
+        <td id="e_recommendma15">{{ e['recommendma15'] }}</td>
+        <td id="e_recommendma60">{{ e['recommendma60'] }}</td>
+        <td id="e_recommendma240">{{ e['recommendma240'] }}</td>
+        <td id="e_recommendma">{{ e['recommendma'] }}</td>
+        <td id="e_recommendma1w">{{ e['recommendma1w'] }}</td>
+        <td id="e_recommendma1m">{{ e['recommendma1m'] }}</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+  {% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    <form action="" class="form-inline" method="post">
+
+      <select name=signal1 method="GET" action="/">
+		    {% for colour in colours %}
+		    <option value= "{{colour}}" SELECTED>{{colour}}</option>"
+		    {% endfor %}
+	   </select>
+		<select name=signal2 method="GET" action="/">
+		    {% for colour in colours %}
+		    <option value= "{{colour}}" SELECTED>{{colour}}</option>"
+		    {% endfor %}
+		</select>
+      	<select name=signal3 method="GET" action="/">
+		    {% for colour in colours %}
+		    <option value= "{{colour}}" SELECTED>{{colour}}</option>"
+		    {% endfor %}
+		</select>
+      <input class="btn btn-default" type="submit" value="Command">
+    </form>
+
+
+
+{% endblock %}
